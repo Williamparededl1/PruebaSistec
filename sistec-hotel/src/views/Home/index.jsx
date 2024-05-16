@@ -19,7 +19,7 @@ const Home = () =>{
             </div>
             <div>
                 <button onClick={handleInfoClick}>
-                    Ver mas
+                    Ver Registros
                 </button>
             </div>
         </div>

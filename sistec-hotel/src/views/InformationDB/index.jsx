@@ -1,7 +1,8 @@
+import RegistroEvent from "../../RegistroEvent";
 const InformacionDB = () =>{
 return(
     <div>
-        esta es la base
+        <RegistroEvent />
     </div>
 );
 

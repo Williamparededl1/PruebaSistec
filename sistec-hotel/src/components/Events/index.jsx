@@ -3,14 +3,13 @@ import data from '../../data/DataHabitaciones.json'
 
 const ClientContext = createContext();
 
-export const ClienteEvents = ({children}) => {
+export const ClienteEvents = ({ children }) => {
     const [clients, setClients]=useState([])
     const [habitaciones,setHabitaciones]=useState(data)
     const [info,setInfo]=useState([])
 
     const clientRegistred = (client) => {
         setClients([...clients,client]);
-        
         setHabitaciones(
             habitaciones.map((habitacion) => 
             habitacion.numero === client.numeroHabitacion ? {...habitacion, estado: true}: habitacion

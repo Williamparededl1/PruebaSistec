@@ -1,11 +1,15 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import ClientContext from '../Events';
 
 
+
 const FormCliente = () =>{
     const { register , handleSubmit, reset} = useForm();
-    const {clientRegistred,habitaciones} = useContext(ClientContext);
+    //const {clients, habitaciones, info, clientRegistred, clientRemover} = useContext(ClientContext)
+    const { habitaciones, clientRegistred} = useContext(ClientContext)
+    console.log (useContext(ClientContext))
+   
 
     const handleEnviarForm = (data)=>{
         clientRegistred(data)
@@ -32,21 +36,22 @@ const FormCliente = () =>{
                 <select {...register('numeroHabitacion')} required>
                 <option value="">Seleccione una habitación</option>
                     {habitaciones.map((habitacion) =>
-                        !habitacion.occupied ? <option key={habitacion.number} value={habitacion.number}>{habitacion.number}</option> : null
+                        !habitacion.estado ? <option key={habitacion.numero} value={habitacion.numero}>{habitacion.numero}</option> : null
           )}
         </select>
             </label>
             <br />
             <label >
                 Fecha ingreso:
-                <input type="text" {...register('fechaingreso')} required/>
+                <input type="date" {...register('fechaingreso')} required/>
             </label>
             <br />
             <label >
                 Fecha Salida:
-                <input type="text" {...register('fechasalida')} required/>
+                <input type="date" {...register('fechasalida')} required/>
             </label>
             <br />
+            <button type="submit">Registrar Huésped</button>
 
         </form>
     </div>
