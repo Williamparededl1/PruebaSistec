@@ -1,9 +1,54 @@
+import React, { useState, useContext } from 'react';
+import { useForm } from "react-hook-form";
+import ClientContext from '../Events';
+
 
 const FormCliente = () =>{
+    const { register , handleSubmit, reset} = useForm();
+    const {clientRegistred,habitaciones} = useContext(ClientContext);
+
+    const handleEnviarForm = (data)=>{
+        clientRegistred(data)
+        reset();
+    };
+
+
 
     return(
     <div>
-        Aqui va el Formulario
+        <form onSubmit={handleSubmit(handleEnviarForm)} >
+            <label>
+                Nombre
+                <input type="text" {...register('nombre')} required/>
+            </label>
+            <br />
+            <label >
+                CI
+                <input type="text" {...register('identificacion')} required/>
+            </label>
+            <br />
+            <label >
+            Número de Habitación:
+                <select {...register('numeroHabitacion')} required>
+                <option value="">Seleccione una habitación</option>
+                    {habitaciones.map((habitacion) =>
+                        !habitacion.occupied ? <option key={habitacion.number} value={habitacion.number}>{habitacion.number}</option> : null
+          )}
+        </select>
+            </label>
+            <br />
+            <label >
+                Fecha ingreso:
+                <input type="text" {...register('fechaingreso')} required/>
+            </label>
+            <br />
+            <label >
+                Fecha Salida:
+                <input type="text" {...register('fechasalida')} required/>
+            </label>
+            <br />
+
+        </form>
     </div>
     );
 

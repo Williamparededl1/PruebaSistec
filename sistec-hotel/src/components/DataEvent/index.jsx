@@ -6,3 +6,4 @@ const HotelData = () =>{
     </div>
  );
 }
+export default HotelData;

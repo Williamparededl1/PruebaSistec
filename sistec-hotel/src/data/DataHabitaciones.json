@@ -1,10 +1,10 @@
 [
-    { "number": 101, "occupied": false },
-    { "number": 102, "occupied": false },
-    { "number": 103, "occupied": false },
-    { "number": 104, "occupied": false },
-    { "number": 105, "occupied": false },
-    { "number": 106, "occupied": false },
-    { "number": 107, "occupied": false },
-    { "number": 108, "occupied": false }
+    { "numero": 101, "estado": false },
+    { "numero": 102, "estado": false },
+    { "numero": 103, "estado": false },
+    { "numero": 104, "estado": false },
+    { "numero": 105, "estado": false },
+    { "numero": 106, "estado": false },
+    { "numero": 107, "estado": false },
+    { "numero": 108, "estado": false }
 ]
