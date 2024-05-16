@@ -9,7 +9,6 @@ const HotelInfo = () => {
     } 
     return(
         <div>
-            Lista de Huespedes
             <ListCliente />
             <div>
                 <button onClick={handleDBClick}>

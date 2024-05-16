@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import './form.css'
 import { useForm } from "react-hook-form";
 import ClientContext from '../Events';
 
